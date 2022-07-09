@@ -1,0 +1,61 @@
+Gitbash
+gerar chave SSH
+
+ssh-keygen -t ed25519 -c del.adelmo@gmail.com
+depois de chave gerada navegar até local mostrado 
+cd /c/users/Adelmo/.ssh/
+ls para visualizar as chaves e entrar com comando cat na chave.pub
+
+copiar chave
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFmKZP0hsNHknGor2bSJQiUso5NiWEJeYlmToj23auKW del.adelmo@gmail.com
+
+a chave sera usada na pag da https://github.com/settings/keys em new SSH key
+
+
+será necessario inicializar o SSH agent que fica encarregada de gerenciar as chaves
+
+eval $(ssh-agent -s)
+
+passar a chave privada para o agent
+
+ssh-add id_25519
+será solicitado a senha
+
+ok tudo certo até aqui, 
+
+Depois disto é criar um repositorio no github na pag web, depois de criado copiar a a chave SSH: git@github.com:DevAdelmo/dio-desafio-github-primeiro-repo.git
+
+no gitbash clonar repositorio dentro da pasta desejada
+
+git clone git@github.com:DevAdelmo/dio-desafio-github-primeiro-repo.git
+
+será questionado, digitar: yes
+
+===========================================utilizando o github===========================
+dentro da pasta a ser usada iniciar o git
+
+git init
+
+configurar user name se torna necessario na primeira utilização
+
+git config --global user.email "del.adelmo@gmail.com"
+git config --global user.name Adelmo
+
+ok depois de fazer as alteraçoes nos aquivos 
+
+git add*
+git commit - m "descrição do que foi alterado"
+
+
+caso nao tenha o diretorio no github ainda crie um novo diretorio na web e copie o link para ser apontado no  gitbash com o seguinte comando
+
+git remote add origin https://github.com/Adelmo..........
+git push origin master - para empurar os arquivos para o servidor github -  solicitara altenticação
+
+para visualizar a lista de repositorios cadastrado
+
+git remote -v
+
+para puchar os aquivos do servidor
+
+git pull origin master
