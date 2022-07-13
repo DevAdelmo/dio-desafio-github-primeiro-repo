@@ -59,3 +59,7 @@ git remote -v
 para puchar os aquivos do servidor
 
 git pull origin master
+ 
+ 
+ 
+ fim
